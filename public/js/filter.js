@@ -1,13 +1,15 @@
-import { selectedCategory, selectedType } from "./select.js";
-import {min,max} from "./slider.js"
+import { selectedCategory, selectedType, resetSelect } from "./select.js";
+import {min,max,resetSlider} from "./slider.js"
 import { createCard, removeChildren} from "./card.js";
 const productContainer=document.querySelector(".product-container");
-const form = document.querySelector(".filter-form");
+const filterSubmitBtn = document.querySelector(".submit-btn");
 const genderArea=document.querySelector(".gender-area");
 const genderAreaMobile=document.querySelector(".mobile-gender-area");
 const sort = document.querySelector(".sort");
 const contentsTitle=document.querySelector(".contents-title");
 const spinnerContainer=document.querySelector(".spinner-container")
+const URL = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
+// const URL = "http://localhost:8080/"
 
 
 function fetchFilterdItems(url,data,isSort){
@@ -57,7 +59,7 @@ function handleSubmit(e){
     min,
     max,
   }
-  fetchFilterdItems('http://localhost:8080/filter',condition)
+  fetchFilterdItems(URL + 'filter',condition)
   
 }
 
@@ -66,8 +68,10 @@ function handleSubmit(e){
 function selectGender(e){
   if(e.target.tagName === 'LABEL'){
     contentsTitle.scrollIntoView({behavior:'smooth', block:'start'});
+    resetSelect();
+    resetSlider();
     const gender = e.target.innerText;
-    fetchFilterdItems("http://localhost:8080/gender", {gender})
+    fetchFilterdItems(URL + "gender", {gender})
   }
 }
 
@@ -75,7 +79,7 @@ function selectGender(e){
 function sortItems(){
  if(sort.value){
    const sortBy = sort.value;
-   fetchFilterdItems("http://localhost:8080/sort", {sortBy}, true)
+   fetchFilterdItems(URL + "sort", {sortBy}, true)
  }
 }
 
@@ -84,5 +88,5 @@ genderAreaMobile.addEventListener('click',selectGender)
 sort.addEventListener('change', sortItems);
 
 // submit form and send the data to backend
-form.addEventListener('submit',handleSubmit)
+filterSubmitBtn.addEventListener('click',handleSubmit)
   

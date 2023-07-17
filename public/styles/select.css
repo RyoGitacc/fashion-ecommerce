@@ -1,12 +1,13 @@
 .select{
-    width: 180px;
+    width: 100%;
     position: relative;
     user-select: none;
     cursor: pointer;
     box-sizing: border-box;
-    /* text-align: left; */
+    padding: 0 15px 0 0;
 }
 .label{
+    width: 100%;
     font-size: 1rem;
     font-weight: 700;
     color: #999994;
@@ -45,12 +46,22 @@
     overflow: hidden;
     transition: all .2s linear;
     height:0px;
+    z-index: 20;
 }
 
 .option{
-    color: black;
+    width: 100%;
+    display: block;
+    color: #222222;
     height: 30px;
 }
 .option:hover{
     background-color: rgba(0,0,0,.5);
+}
+
+
+@media screen and (max-width:650px){
+    .select{
+        padding: 0 0 15px 0;
+    }
 }

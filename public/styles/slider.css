@@ -1,11 +1,18 @@
 .range-container{
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 15px 0 0;
 }
 .range-wrapper{
     height: 37px;
     position: relative;
+}
+.label{
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #999994;
 }
 .indicator{
     display: flex;
@@ -93,4 +100,10 @@ input[type="range"]::-ms-thumb {
     -ms-appearance: none;
     background-color: #999994;
     cursor: pointer;
+}
+
+@media screen and (max-width:650px){
+    .range-container{
+        padding: 0 0 30px 0;
+    }
 }

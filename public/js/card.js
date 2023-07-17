@@ -1,12 +1,17 @@
 import { cartItems, calculateCart, stringToNode, shoppingCartBody,numOfItemNode, totalPaymentNode} from "./shoppingCart.js";
 const productContainer=document.querySelector(".product-container");
+const filterBtn=document.querySelector('.filter-btn');
+
 const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
+// const url = "http://localhost:8080/"
+
+
 
 // create card element from string.
 export function createCard(card){
   var cardText=`  
   <div class="card">
-    <img src="../assets/images/heart-plus.svg" alt="" class="heart-plus">
+    <img src="../assets/icons/heart-plus.svg" alt="" class="heart-plus">
     <img src="../assets/images/${card.img}" alt="" class="card-img">
     <div class="card-body">
       <p class="card-name">${card.name}</p>
@@ -50,7 +55,7 @@ export function createCard(card){
     
     for(var i=0;i<quotient;i++){
         const star = document.createElement('img');
-        star.src="../assets/images/star.svg";
+        star.src="../assets/icons/star.svg";
         star.classList="star"
         
         starsContainer.appendChild(star);
@@ -58,7 +63,7 @@ export function createCard(card){
 
   if(remainder > 0.2){
     const halfStar=document.createElement('img');
-    halfStar.src="../assets/images/half-star.svg";
+    halfStar.src="../assets/icons/half-star.svg";
     halfStar.classList="half-star"
     starsContainer.appendChild(halfStar)
   }
@@ -122,6 +127,22 @@ function fetchData(){
     })
 }
 
+//closure
+function createChangeText(){
+   var isOpen=true;
+   
+   return function(){
+    console.log(isOpen)
+       if(isOpen) filterBtn.innerText= "- close filter"
+       else filterBtn.innerText= "+ add filter"
+       isOpen = !isOpen;
+   }
+}
 
+//assign closure
+const changeText = createChangeText();
+
+
+filterBtn.addEventListener('click',changeText)
 document.addEventListener("DOMContentLoaded",fetchData);
 productContainer.addEventListener('click',addToCart);

@@ -97,11 +97,6 @@
     display: flex;
     gap: 5px;
 }
-/* .cart-item-quantity{
-    font-size: 1rem;
-    color: #222222;
-    font-weight: 500;
-} */
 .minus-btn, .plus-btn{
   border: none;
   font-size: 1.2rem;
@@ -140,4 +135,22 @@
     color: white;
     border: none;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width:950px){
+  #cart{
+    width: 50%;
+  }    
+}
+
+@media screen and (max-width:750px){
+    #cart{
+      width: 60%;
+    }    
+  }
+
+@media screen and (max-width:600px){
+    #cart{
+    width: 80%;
+    }    
 }

@@ -2,6 +2,15 @@ export let selectedCategory="";
 export let selectedType=""
 const selects = document.querySelectorAll(".select")
 
+export function resetSelect(){
+  selectedCategory="";
+  selectedType="";
+
+  selects.forEach((s,index)=>{
+    s.querySelector(".selected-value").innerText= index === 0 ? "All categories" : "Any type"
+  })
+}
+
 
 function openSelect(dOption, list, num){
   //children 1,2 are down and up arrow

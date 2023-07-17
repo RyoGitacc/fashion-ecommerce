@@ -3,58 +3,6 @@
     padding: 0;
     font-family: 'Ysabeau SC', sans-serif;
 }
-.bg{
-    height: calc(100vh - 70px);
-    background-image: url("../assets/images/guy2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    background-color: white;
-    margin-top: 70px;
-}
-.shadow{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .4);
-}
-.texts{
-    height: calc(100% - 70px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-.text-container{
-    position: absolute;
-    top:40%;
-    text-align: center;
-}
-.title{
-    color: white;
-    font-size: 3rem;
-    font-weight: 700;
-}
-.sub-title{
-    color: white;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 8vh;
-}
-.explore-btn{
-    border: 1px solid white;
-    background-color: transparent;
-    padding: 10px;
-    color: white;
-    font-size: 2.5rem;
-    transition: all .3s linear;
-    cursor: pointer;
-}
-.explore-btn:hover{
-    background-color: #ed6d35;
-    border: 1px solid #ed6d35;
-}
 
 .filter-area{
     background-color: #ede4e1;
@@ -62,32 +10,48 @@
     align-items: center;
     justify-content: center;
 }
-.filter-form{
-   margin: 20px 0;
-   user-select: none;
-}
-.inputs-container{
-    display: flex;
-    gap:10px;
-    margin-bottom: 40px;
-}
-.btn-container{
+.collapse-btn-container{
     text-align: center;
+    margin-bottom: 20px;
 }
-.btn-container .submit-btn{
-     font-size: 1.5rem;
-     font-weight: 500;
-     padding: 5px 13px;
-     border: 1px solid #999994;
-     cursor: pointer;
-     background-color: #fff5f2;
+.filter-btn{
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid #222222;
+    padding: 5px 10px;
+    color: #222222;
+    background-color: #EFEFEF;
+}
+.filter-form{
+    display: flex;
+    align-items: flex-end;
+    padding: 50px 10%;
+    background-color: #ede4e1;
+    list-style: none;
+    margin: 0;
+}
+.filter-form .filter-form-list{
+    width:calc((100% - 122px) / 3);
+    margin: 0;
+}
+.filter-form .filter-form-list:nth-child(4){
+    width:122px;
+    display: flex;
+    justify-content: flex-end;
+}
+.filter-form .submit-btn{
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    background-color: #ed825f;
+    color: white;
+    width:122px;
+    height: 37px;
+    box-sizing: border-box;
 }
 
 .btn-container .submit-btn:focus{
     outline: none;
-}
-.main-contents{
-    padding: 0 10%;
 }
 .contents-title{
     font-size: 2rem;
@@ -110,17 +74,13 @@
     position: relative;
     margin-bottom: 20px;
 }
-
-button:focus{
-outline: none;
-}
 select:focus{
     outline: none;
 }
 
 .sort-container{
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px 0;
 }
 .sort{
     width: 100px;
@@ -132,13 +92,14 @@ select:focus{
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    padding: 0 10%;
 }
 .spinner-container{
     width: 100%;
     height: 80vh;
     display: none;
     justify-content: center;
-    /* align-items: center; */
+    padding: 0 10%;
 }
 .spinner-border{
    width: 60px;
@@ -212,14 +173,17 @@ select:focus{
     font-size: .8rem;
 }
 
+
+
+
 @media screen and (max-width:1000px){
-    .main-contents{
+    .product-container{
         padding: 0 5%;
     }
 }
 
 @media screen and (max-width:900px){
-    .main-contents{
+    .product-container{
         padding: 0 10px;
     }
 }
@@ -227,8 +191,10 @@ select:focus{
 @media screen and (max-width:750px){
     .card{
         width: calc((100% - 50px) / 3);
-        background-color: white;
-        position: relative;
+    }
+    .filter-form{
+        padding: 50px 5%;
+       
     }
 }
 
@@ -236,9 +202,23 @@ select:focus{
     .product-container{
         gap: 10px;
     }
+    .filter-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 10px;
+         
+    }
+    .filter-form .filter-form-list{
+        width:100%;
+        margin: 0;
+    }
+    .filter-form .filter-form-list:nth-child(4){
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
     .card{
         width: calc((100% - 10px) / 2);
-        background-color: white;
-        position: relative;
     }
 }
