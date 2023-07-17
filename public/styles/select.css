@@ -1,0 +1,56 @@
+.select{
+    width: 180px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* text-align: left; */
+}
+.label{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #999994;
+}
+.default-option{
+    width:100%;
+    height: 37px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #999994;
+    box-sizing: border-box;
+    background-color: #ede4e1;
+}
+.selected-value{
+    pointer-events: none;
+}
+.down-arrow, .up-arrow{
+    width: 15px;
+    height: 15px;
+}
+.up-arrow{
+    display: none;
+}
+.option-list{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #ede4e1;
+    overflow: hidden;
+    transition: all .2s linear;
+    height:0px;
+}
+
+.option{
+    color: black;
+    height: 30px;
+}
+.option:hover{
+    background-color: rgba(0,0,0,.5);
+}

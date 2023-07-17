@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/styles/select.css"/>
+
+<div class="select">
+ <label class="label"><%= data.label %></label>
+ <div class="default-option">
+    <span class="selected-value"><%= data.label === "Category" ? "All categories" : "Any type" %></span>
+    <img src="/assets/images/down-arrow.svg" alt="" class="down-arrow">
+    <img src="/assets/images/up-arrow.svg" alt="" class="up-arrow">
+ </div>
+ <ul class="option-list">
+    <% data.values.forEach((e,index)=>{ %>
+      <li class="option"><%- e %></li>
+    <% }); %>
+ </ul>
+</div>
+
+<script>
+   
+</script>

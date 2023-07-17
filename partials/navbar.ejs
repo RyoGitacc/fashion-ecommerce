@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/styles/navbar.css"/>
+<nav class="navbar">
+ <div class="top">Discover your favorite outfit online</div>
+ <ul class="nav-list">
+     <li class="logo-area">
+        <a href="http://localhost:8080/">logo</a>
+     </li>
+     <li class="gender-area">
+          <input type="radio" name="gender" id="men">
+          <label for="men" class="gender-btn">Men</label>
+          <input type="radio"name="gender" id="women">
+          <label for="women" class="gender-btn">Women</label>
+          <input type="radio" name="gender" id="kids">
+          <label for="kids" class="gender-btn">Kids</label>
+          <input type="radio" name="gender" id="baby">
+          <label for="baby" class="gender-btn">Babies</label>
+     </li>
+     <li class="button-area">
+         <img src="/assets/icons/search.svg" alt="" class="nav-icon search-icon">
+         <img src="/assets/icons/login.svg" alt="" class="nav-icon">
+         <img src="/assets/icons/heart.svg" alt="" class="nav-icon">
+         <img src="/assets/icons/cart.svg" alt="" class="nav-icon cart-icon">
+     </li>
+
+     <div class="searchbar-container">
+        <div class="searchbar">
+           <input type="text" class="search-input" placeholder="search by keyword">
+           <div class="search-icon-container">
+            <img src="/assets/icons/search2.svg" alt="" class="searchbar-icon">
+           </div>
+        </div>
+        <div class="search-close-container">
+            X
+        </div>
+     </div>
+
+ </ul>
+</nav>
+<div class="mobile-only">
+    <div class="mobile-gender-area">
+        <input type="radio" name="gender" id="men-mobile">
+        <label for="men-mobile" class="mobile-gender-btn">Men</label>
+        <input type="radio"name="gender" id="women-mobile">
+        <label for="women-mobile" class="mobile-gender-btn">Women</label>
+        <input type="radio" name="gender" id="kids-mobile">
+        <label for="kids-mobile" class="mobile-gender-btn">Kids</label>
+        <input type="radio" name="gender" id="baby-mobile">
+        <label for="baby-mobile" class="mobile-gender-btn">Babies</label>
+    </div>
+</div>
+<%- include("./shoppingCart.ejs") %>
+<script type="module" src="../js/navbar.js"></script>

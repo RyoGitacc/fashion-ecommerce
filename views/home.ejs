@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/home.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    padding: 0 0;
+  }
+  p{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: #222222;
+  }
+  .input:focus{
+    outline: none;
+  }
+  button:focus{
+    outline: none;
+  }
+</style>
+<body>
+  <div class="home">
+    <%- include('../partials/navbar.ejs')%>
+    <%- include('../partials/carousel.ejs') %>
+    <div class="contents">
+      <section class="filter-area">
+        <form class="filter-form">
+          <div class="inputs-container">
+            <%- include("../partials/select.ejs",{data:categories}) %>
+            <!-- <%- include("../partials/select.ejs",{data:Type}) %>
+            <%- include("../partials/slider.ejs") %> -->
+          </div>
+          <div class="btn-container">
+            <button type="'submit" class="submit-btn">Filter</button>
+          </div>
+       </form>
+      </section>
+      <section class="main-contents">
+        <p class="contents-title">Line up</p>
+        <div class="sort-container">
+           <select class="sort" name="sort">
+              <option value="all">Sort</optiom>
+              <option value="price">Low Price</option>
+              <option value="date">New Date</option>
+              <option value="highRating">High rating</option>
+            </select>
+          </div>
+          <div class="spinner-container">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div class="product-container"></div>
+        </section>
+      </div>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script type="module" src="../js/card.js"></script>
+      <script type="module" src="../js/select.js"></script>
+      <script type="module" src="../js/filter.js"></script>
+</body>
+</html>
