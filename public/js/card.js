@@ -1,6 +1,6 @@
 import { cartItems, calculateCart, stringToNode, shoppingCartBody,numOfItemNode, totalPaymentNode} from "./shoppingCart.js";
 const productContainer=document.querySelector(".product-container");
-
+const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
 
 // create card element from string.
 export function createCard(card){
@@ -108,7 +108,7 @@ function addToCart(e){
 // when dom loaded, initialize cards to fetched data
 function fetchData(){
     console.log("loaded")
-    fetch('http://localhost:8080/data', {
+    fetch(url + "/data", {
         'Content-Type':'application/json'
     }).then(response=>{
         if(response.status === 200) return response.json();
