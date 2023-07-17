@@ -108,7 +108,7 @@ function addToCart(e){
 // when dom loaded, initialize cards to fetched data
 function fetchData(){
     console.log("loaded")
-    fetch(url + "/data", {
+    fetch(url + "data", {
         'Content-Type':'application/json'
     }).then(response=>{
         if(response.status === 200) return response.json();
