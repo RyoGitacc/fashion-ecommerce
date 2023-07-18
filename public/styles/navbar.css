@@ -37,9 +37,6 @@
 .logo-area{
     width: 120px;
 }
-.gender-area{
-   
-}
 .button-area{
     margin: 0 0 0 auto;
 }
@@ -135,6 +132,7 @@ input[type="radio"]:checked + label{
     box-sizing: border-box;
     z-index: 5;
     transition: transform .2s linear;
+    white-space: nowrap;
 }
 .hide{
     transform: translateY(-70px); 
@@ -162,4 +160,11 @@ input[type="radio"]:checked + label{
     .mobile-only{
         display: flex;
     }
+}
+
+@media screen and (max-width:300px) {
+.mobile-gender-btn{
+    font-size: 6vw;
+    flex: 1;
+}
 }
