@@ -313,7 +313,7 @@ date: "2023-07-05"
         category:"Tops",
         price: 40,
         quantity:1,
-        img: "Stripe.webp",
+        img: "stripe.webp",
         reviews: [
         {
           name:"Kevin",
