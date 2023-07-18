@@ -7,7 +7,8 @@ const genderArea=document.querySelector(".gender-area");
 const genderAreaMobile=document.querySelector(".mobile-gender-area");
 const sort = document.querySelector(".sort");
 const contentsTitle=document.querySelector(".contents-title");
-const spinnerContainer=document.querySelector(".spinner-container")
+const spinnerContainer=document.querySelector(".spinner-container");
+const searchbar= document.querySelector('.searchbar')
 const URL = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
 // const URL = "http://localhost:8080/"
 
@@ -83,9 +84,17 @@ function sortItems(){
  }
 }
 
+function searchItem(e){
+  e.preventDefault();
+  const keyword=e.target.keyword.value;
+  fetchFilterdItems(URL + "search",{keyword})
+}
+
+
 genderArea.addEventListener('click',selectGender)
 genderAreaMobile.addEventListener('click',selectGender)
 sort.addEventListener('change', sortItems);
+searchbar.addEventListener('submit', searchItem)
 
 // submit form and send the data to backend
 filterSubmitBtn.addEventListener('click',handleSubmit)

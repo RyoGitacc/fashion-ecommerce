@@ -90,6 +90,7 @@
     -webkit-line-clamp: 1;
     line-clamp: 1;
     word-wrap: break-word;
+    /* white-space: nowrap; */
 }
 .cart-quantity-btns{
     position: absolute;

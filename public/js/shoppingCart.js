@@ -39,7 +39,7 @@ export function createItemNode(item){
     <div class="cart-item" id=${item.id}>
       <ul class="cart-item-wrapper">
         <li class="cart-item-left">
-            <img src="../assets/images/${item.img}" alt="" class="cart-item-img">
+            <img src="../assets/productImages/${item.img}" alt="" class="cart-item-img">
         </li>
         <li class="cart-item-middle">
            <p class="cart-item-name">${item.name}</p>

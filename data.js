@@ -154,6 +154,7 @@ gender: "Women",
 type: "",
 date: "2023-07-15"
 },
+
 { 
 id:8,
 name: "Maxi dress",
@@ -179,6 +180,184 @@ gender: "Women",
 type: "",
 date: "2023-07-05"
 },
+
+{ 
+  id:9,
+  name: "Girls floral dress",
+  category:"Tops",
+  price: 30,
+  quantity:1,
+  img: "girls-floral-dress.webp",
+  reviews: [{
+    name:"Mike",
+    comment:"good hoody.",
+    stars:5
+  },{
+    name:"Keeth",
+    comment:"good hoody.",
+    stars:4
+  },
+  {
+    name:"Kevin",
+    comment:"good hoody.",
+    stars:4
+  }],
+  gender: "Kids",
+  type: "",
+  date: "2023-07-05"
+  },
+
+  { 
+  id:10,
+  name: "Girls Jacket",
+  category:"Outerwear",
+  price: 50,
+  quantity:1,
+  img: "girls-jacket.webp",
+  reviews: [{
+    name:"Mike",
+    comment:"good hoody.",
+    stars:5
+  },{
+    name:"Keeth",
+    comment:"good hoody.",
+    stars:4
+  },
+  {
+    name:"Kevin",
+    comment:"good hoody.",
+    stars:4
+  }],
+  gender: "Kids",
+  type: "",
+  date: "2023-07-19"
+  },
+
+  { 
+    id:11,
+    name: "Girls pants",
+    category:"Bottoms",
+    price: 30,
+    quantity:1,
+    img: "girls-pants.webp",
+    reviews: [],
+    gender: "Kids",
+    type: "",
+    date: "2023-02-05"
+    },
+    
+    { 
+    id:12,
+    name: "Girls Skirt",
+    category:"Skirt",
+    price: 45,
+    quantity:1,
+    img: "girls-skirt.webp",
+    reviews: [
+    {
+      name:"Kevin",
+      comment:"good hoody.",
+      stars:4
+    }],
+    gender: "Kids",
+    type: "",
+    date: "2023-07-19"
+    },
+
+    { 
+      id:13,
+      name: "Girls Sweater",
+      category:"Outerwear",
+      price: 60,
+      quantity:1,
+      img: "girls-sweater.webp",
+      reviews: [],
+      gender: "Kids",
+      type: "",
+      date: "2023-01-05"
+      },
+      
+      { 
+      id:14,
+      name: "Kids Sneaker",
+      category:"Shues",
+      price: 42,
+      quantity:1,
+      img: "kids-sneaker.webp",
+      reviews: [{
+        name:"Mike",
+        comment:"good hoody.",
+        stars:5
+      },],
+      gender: "Kids",
+      type: "",
+      date: "2023-07-19"
+      },
+
+      { 
+        id:15,
+        name: "Swim shorts",
+        category:"Bottoms",
+        price: 30,
+        quantity:1,
+        img: "swimshorts.webp",
+        reviews: [],
+        gender: "Men",
+        type: "",
+        date: "2023-02-05"
+        },
+        
+        { 
+        id:16,
+        name: "Stripe shirt",
+        category:"Tops",
+        price: 40,
+        quantity:1,
+        img: "Stripe.webp",
+        reviews: [
+        {
+          name:"Kevin",
+          comment:"good hoody.",
+          stars:4
+        }],
+        gender: "Kids",
+        type: "",
+        date: "2023-07-19"
+        },
+    
+        { 
+          id:17,
+          name: "Cotton shirt",
+          category:"Tops",
+          price: 50,
+          quantity:1,
+          img: "cotton-shirt.webp",
+          reviews: [ {
+            name:"Kevin",
+            comment:"good shirts.",
+            stars:5
+          }],
+          gender: "Men",
+          type: "",
+          date: "2023-07-05"
+          },
+          
+          { 
+          id:18,
+          name: "Sports bra",
+          category:"Tops",
+          price: 42,
+          quantity:1,
+          img: "sportsbra.webp",
+          reviews: [ {
+            name:"Susan",
+            comment:"comfortable",
+            stars:4
+          }],
+          gender: "Women",
+          type: "",
+          date: "2023-07-19"
+          },
 // { 
 // name: "",
 // price: "",

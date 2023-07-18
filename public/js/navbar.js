@@ -11,6 +11,7 @@ function handleEvent(e){
   }
   else if(e.target.classList[1] === 'search-icon'){
     searchbarContainer.style.display="flex";
+    searchbarContainer.querySelector(".search-input").focus();
   }
   else if(e.target.classList[0] === 'search-close-container'){
     searchbarContainer.style.display="none";

@@ -12,7 +12,7 @@ export function createCard(card){
   var cardText=`  
   <div class="card">
     <img src="../assets/icons/heart-plus.svg" alt="" class="heart-plus">
-    <img src="../assets/images/${card.img}" alt="" class="card-img">
+    <img src="../assets/productImages/${card.img}" alt="" class="card-img">
     <div class="card-body">
       <p class="card-name">${card.name}</p>
       $${card.price}

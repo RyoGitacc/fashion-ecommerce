@@ -56,7 +56,6 @@ app.post('/filter',(req,res)=>{
 })
 
 app.post("/sort",(req,res)=>{
-    console.log(req.body,currentFilteredItems)
     switch(req.body.sortBy){
         case "price":
             currentFilteredItems.sort((a,b)=>a.price - b.price); break;
@@ -76,6 +75,15 @@ app.post("/sort",(req,res)=>{
     }
   
     res.status(200).json(currentFilteredItems)
+})
+
+app.post("/search",(req,res)=>{
+    console.log(req.body)
+    const keyword = req.body.keyword;
+    const regx=new RegExp("[a-zA-Z]*" + keyword + "+",'i')
+    const searchedItems=data.filter(d=>regx.test(d.name));
+    currentFilteredItems= searchedItems
+    res.status(200).json(searchedItems)
 })
 
 
