@@ -8,8 +8,8 @@ const genderAreaMobile=document.querySelector(".mobile-gender-area");
 const sort = document.querySelector(".sort");
 const contentsTitle=document.querySelector(".contents-title");
 const spinnerContainer=document.querySelector(".spinner-container")
-const URL = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
-// const URL = "http://localhost:8080/"
+// const URL = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
+const URL = "http://localhost:8080/"
 
 
 function fetchFilterdItems(url,data,isSort){

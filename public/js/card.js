@@ -2,8 +2,8 @@ import { cartItems, calculateCart, stringToNode, shoppingCartBody,numOfItemNode,
 const productContainer=document.querySelector(".product-container");
 const filterBtn=document.querySelector('.filter-btn');
 
-const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
-// const url = "http://localhost:8080/"
+// const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
+const url = "http://localhost:8080/"
 
 
 
