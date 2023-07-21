@@ -2,8 +2,8 @@ import { cartItems, calculateCart, stringToNode, shoppingCartBody,numOfItemNode,
 const productContainer=document.querySelector(".product-container");
 const filterBtn=document.querySelector('.filter-btn');
 
-const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
-// const url = "http://localhost:8080/"
+// const url = "https://fashion-site2023-b1bf572760a8.herokuapp.com/"
+const url = "http://localhost:8080/"
 
 
 
@@ -51,7 +51,6 @@ export function createCard(card){
     const avarage = sum / card.reviews.length;
     const quotient = Math.floor(avarage);
     const remainder = Math.floor((avarage % quotient) * 10) / 10;
-    console.log(avarage, quotient, remainder)
     
     for(var i=0;i<quotient;i++){
         const star = document.createElement('img');

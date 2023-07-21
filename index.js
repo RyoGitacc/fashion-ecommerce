@@ -15,32 +15,51 @@ const TYPE={
     label:"Type",
     values:["Any","New Arrival", "Featured", "Sale", "Limited Offer"]
 }
+const FEATURES=['New Arrivals', 'Summer Sale', "Sneaker love"]
 
 
-let currentItems;
+
+let tempItems;
+let filteredItemsByCondition;
 let currentFilteredItems;
+let loadCount=1;
 
 app.get('/',(req,res)=>{
-    res.render('home',{categories:CATEGORIES, Type:TYPE})
+    res.render('home',{categories:CATEGORIES, type:TYPE, features: FEATURES})
 })
 
 app.get('/data',(req,res)=>{
-    currentItems = [...data];
-    currentFilteredItems = [...data]
-    res.status(200).json(data);
+    tempItems = [...data];
+    filteredItemsByCondition = [...data];
+    currentFilteredItems = data.slice(0,4);
+    loadCount=1;
+    res.status(200).json(currentFilteredItems);
 })
 
+app.get('/loadMore',(req,res)=>{
+    if(filteredItemsByCondition){
+        const moreItems = filteredItemsByCondition.slice((loadCount * 4), (loadCount * 4 + 4) );
+        currentFilteredItems.push(...moreItems);
+        loadCount++;
+        res.status(200).json(moreItems)
+    }
+});
+
+
 app.post('/gender',(req,res)=>{
+    console.log(req.body,"gender")
     const filteredItems = data.filter(d=>d.gender === req.body.gender);
-    currentItems = filteredItems;
-    currentFilteredItems = filteredItems
-    res.status(200).json(filteredItems);
+    tempItems = filteredItems;
+    filteredItemsByCondition = filteredItems;
+    currentFilteredItems=filteredItems.slice(0,4);
+    loadCount=1;
+    res.status(200).json(currentFilteredItems);
 })
 
 app.post('/filter',(req,res)=>{
     const {category,type,min,max}=req.body;
 
-    let filteredItems= currentItems.filter(d=> d.price >= min && d.price <= max)      
+    let filteredItems= tempItems.filter(d=> d.price >= min && d.price <= max)      
 
     if(category){
      filteredItems= filteredItems.filter(f=>f.category === category);
@@ -51,8 +70,10 @@ app.post('/filter',(req,res)=>{
     }
 
 
-    currentFilteredItems=filteredItems;
-    res.status(200).json(filteredItems)
+    filteredItemsByCondition=filteredItems;
+    currentFilteredItems = filteredItems.slice(0,4)
+    loadCount=1;
+    res.status(200).json(currentFilteredItems)
 })
 
 app.post("/sort",(req,res)=>{
@@ -82,8 +103,11 @@ app.post("/search",(req,res)=>{
     const keyword = req.body.keyword;
     const regx=new RegExp("[a-zA-Z]*" + keyword + "+",'i')
     const searchedItems=data.filter(d=>regx.test(d.name));
-    currentFilteredItems= searchedItems
-    res.status(200).json(searchedItems)
+    tempItems= searchedItems;
+    filteredItemsByCondition = searchedItems;
+    currentFilteredItems = searchedItems.slice(0,4);
+    loadCount=1;
+    res.status(200).json(currentFilteredItems)
 })
 
 

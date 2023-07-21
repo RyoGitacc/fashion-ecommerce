@@ -3,7 +3,94 @@
     padding: 0;
     font-family: 'Ysabeau SC', sans-serif;
 }
+.feature-container{
+}
+.feature-list{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    padding: 30px 15%;
+    list-style: none;
+    margin: 0;
+}
+.feature-list li{
+    width: calc((100% - 30px) / 3);
+}
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 0px #7A7A7A;
+    width: 100%;
+    cursor: pointer;
+}
+.feature-btn{
+    font-size: 1.2vw;
+    padding: .4vw .8vw;
+    border: none;
+    font-weight: 700;
+    background-color:#d70035;
+    color:white;
+}
+.feature-container .list1 .feature:nth-child(1){
+    background-image: url('../assets/images/summersale.webp');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    aspect-ratio: 1 / .7;
 
+}
+.feature-container .list1 .feature:nth-child(2){
+    background-image: url('../assets/images/force-majeure.webp');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1 / .7;
+    color: #222222;
+    text-shadow: unset;
+}
+.feature-container .list1 .feature:nth-child(2) span{
+    font-size: 1rem;
+}
+.feature-container .list2 .feature{
+    background-image: url('../assets/images/sneaker-style.webp');
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+.feature-container .list2 .feature::after{
+    content: "Sneakers collection";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: opacity .5s ease;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.feature-container .list2 .feature:hover::after{
+    opacity: 1;
+
+}
+.feature-container .list3 .feature:nth-child(1){
+    background-image: url('../assets/images/accessories.webp');
+    background-size: cover;
+    height: 30%;
+    margin-bottom: 15px;
+}
+.feature-container .list3 .feature:nth-child(2){
+    background-image: url('../assets/images/newarrivals.webp');
+    background-size: cover;
+    background-position: top;
+    height: calc(70% - 15px);
+}
 .filter-area{
     background-color: #ede4e1;
     display: flex;
@@ -96,8 +183,8 @@ select:focus{
 }
 .spinner-container{
     width: 100%;
-    height: 80vh;
-    display: none;
+    height: 200px;
+    display: flex;
     justify-content: center;
     padding: 0 10%;
 }
@@ -106,6 +193,10 @@ select:focus{
    height: 60px;
    color: gray;
    margin-top: 10%;
+}
+.footer{
+    background-color: #222222;
+    height: 100px;
 }
 .card{
     width: calc((100% - 75px) / 4);
@@ -177,6 +268,9 @@ select:focus{
 
 
 @media screen and (max-width:1000px){
+    .feature-list{
+        padding: 30px 10%;
+    }
     .product-container{
         padding: 0 5%;
     }
@@ -199,6 +293,29 @@ select:focus{
 }
 
 @media screen and (max-width:650px){
+    .feature-list{
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    .feature-container .list1 .feature:nth-child(1){
+        background-image: url('../assets/images/summersale.webp');
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 10px;
+        aspect-ratio: 1 / .7;
+    }
+    .feature-container .list3 .feature:nth-child(1){
+        background-image: url('../assets/images/accessories.webp');
+        background-size: cover;
+        height: 30%;
+        margin-bottom: 10px;
+    }
+    .feature-container .list3 .feature:nth-child(2){
+        background-image: url('../assets/images/newarrivals.webp');
+        background-size: cover;
+        background-position: top;
+        height: calc(70% - 10px);
+    }
     .product-container{
         gap: 10px;
     }
@@ -220,5 +337,39 @@ select:focus{
     }
     .card{
         width: calc((100% - 10px) / 2);
+    }
+   
+}
+
+@media screen and (max-width:650px){
+    .feature-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .feature-list li{
+        width: 100%;
+    }
+    .feature{
+        font-size: 9vw;   
+    }
+    .feature-btn{
+        font-size: 5vw;
+        padding: .8vw 1.6vw;
+        border: none;
+        font-weight: 700;
+        background-color:#d70035;
+        color:white;
+    }
+    .feature-container .list3 .feature:nth-child(1){
+        background-image: url('../assets/images/accessories.webp');
+        background-size: cover;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .feature-container .list3 .feature:nth-child(2){
+        background-image: url('../assets/images/newarrivals.webp');
+        background-size: cover;
+        background-position: top;
+        height: 150px;
     }
 }

@@ -12,6 +12,10 @@
   *{
     padding: 0 0;
   }
+  body{
+    padding: 0;
+    margin: 0;
+  }
   p{
     margin: 0;
   }
@@ -31,6 +35,37 @@
     <%- include('../partials/navbar.ejs')%>
     <%- include('../partials/carousel.ejs') %>
     <div class="contents">
+      <section class="feature-container">
+        <ul class="feature-list">
+          <li class="list1">
+            <div class="feature">
+              Summer sale
+              <a><button class="feature-btn">up to 40% off</button></a>
+            </div>
+            <div class="feature">
+              Force-majeure<br>
+              <span>Now on sale</span>
+            </div>
+          </li>
+          <li class="list2">
+            <div class="feature"></div>
+          </li>
+          <li class="list3">
+            <div class="feature">
+               Accessories
+            </div>
+            <div class="feature">
+               New arrivals
+            </div>
+          </li>
+        </ul>
+        <!-- <% features.forEach(f=>{ %>
+           <div class="feature">
+            <%- f %>
+            <a><button class="feature-btn">up to 40% off</button></a>
+          </div> -->
+        <!-- <% }) %> -->
+      </section>
       <section class="main-contents">
         <p class="contents-title">Line up</p>
         <p class="collapse-btn-container">
@@ -44,7 +79,7 @@
               <%- include("../partials/select.ejs",{data:categories}) %>
             </li>
             <li class="filter-form-list">
-              <%- include("../partials/select.ejs",{data:Type}) %>
+              <%- include("../partials/select.ejs",{data:type}) %>
             </li>
             <li class="filter-form-list">
               <%- include("../partials/slider.ejs") %>
@@ -62,12 +97,8 @@
               <option value="highRating">high rating</option>
             </select>
           </div>
-          <div class="spinner-container">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
           <div class="product-container"></div>
+          <div class="footer"></div>
         </section>
       </div>
     </div>
